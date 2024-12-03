@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, type ComputedRef } from 'vue';
+// import { computed, type ComputedRef } from 'vue';
 // import { storeToRefs } from 'pinia';
 import {
   darkTheme,
@@ -25,8 +25,15 @@ import {
 
 <template>
   <n-config-provider :theme="lightTheme">
-    <h1>hello</h1>
-    <AppSection title="section" />
-    <TheAboutMe />
+    <header>
+      <TheAboutMe />
+    </header>
+    <div>
+      <main>
+        <TheWorkExperience />
+      </main>
+
+      <TheFooter />
+    </div>
   </n-config-provider>
 </template>

@@ -1,0 +1,13 @@
+export { default as IconJQuery } from './IconJQuery.vue';
+export { default as IconJS } from './IconJS.vue';
+export { default as IconTS } from './IconTS.vue';
+export { default as IconReact } from './IconReact.vue';
+export { default as IconRuby } from './IconRuby.vue';
+export { default as IconRails } from './IconRails.vue';
+export { default as IconJava } from './IconJava.vue';
+export { default as IconPostgreSQL } from './IconPostgreSQL.vue';
+export { default as IconRust } from './IconRust.vue';
+export { default as IconPython } from './IconPython.vue';
+export { default as IconJupyter } from './IconJupyter.vue';
+export { default as IconPandas } from './IconPandas.vue';
+export { default as IconNode } from './IconNode.vue';
