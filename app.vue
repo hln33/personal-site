@@ -31,6 +31,7 @@ import {
     <div>
       <main>
         <TheWorkExperience />
+        <ThePersonalProjects />
       </main>
 
       <TheFooter />
