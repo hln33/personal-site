@@ -28,6 +28,8 @@ const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(() => ({
     :theme="isDarkMode ? darkTheme : lightTheme"
     :themeOverrides
   >
+    <TheToolBar class="toolbar" />
+
     <header>
       <TheAboutMe />
     </header>
