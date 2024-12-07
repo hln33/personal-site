@@ -4,4 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['nuxtjs-naive-ui', '@pinia/nuxt'],
   css: ['~/assets/base.css', '~/assets/main.css'],
+  app: {
+    head: {
+      title: 'Harry Nguyen',
+      meta: [{ name: 'description', content: "Harry Nguyen's portfolio site." }],
+      htmlAttrs: {
+        lang: 'en-US',
+      },
+    },
+  },
 });
