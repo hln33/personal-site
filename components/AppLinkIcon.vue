@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
 import { NButton, NIcon } from 'naive-ui';
-// import { vPreventFocusOnClick } from '@/directives/directives';
+import { vPreventFocusOnClick } from '@/directives/directives';
 
 const props = defineProps<{ link: string; size: number; component: Component }>();
 
@@ -17,6 +17,7 @@ const redirect = () => {
     class="link-icon"
     text
     @click="redirect"
+    v-prevent-focus-on-click
   >
     <n-icon
       :size="props.size"

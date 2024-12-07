@@ -1,6 +1,6 @@
 @import './base.css';
 
-#app {
+body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem 6rem 2rem;

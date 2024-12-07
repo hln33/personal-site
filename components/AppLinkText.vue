@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NButton } from 'naive-ui';
-// import { vPreventFocusOnClick } from '@/directives/directives';
+import { vPreventFocusOnClick } from '@/directives/directives';
 
 const props = withDefaults(
   defineProps<{ link: string; text: string; openInSameFrame?: boolean }>(),
@@ -19,6 +19,7 @@ const target = props.openInSameFrame ? '_self' : '_blank';
     tag="a"
     :target
     :href="props.link"
+    v-prevent-focus-on-click
   >
     {{ text }}
   </n-button>

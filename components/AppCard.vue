@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NCard } from 'naive-ui';
 import { type Technologies } from '@/types/technology';
-// import { vPreventFocusOnClick } from '@/directives/directives';
+import { vPreventFocusOnClick } from '@/directives/directives';
 
 const props = defineProps<{
   header: string;
@@ -27,6 +27,7 @@ const redirect = () => {
     @keydown.enter="redirect"
     hoverable
     :bordered="false"
+    v-prevent-focus-on-click
   >
     <AppCardHeader
       class="card-header"
