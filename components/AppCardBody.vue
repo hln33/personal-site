@@ -2,7 +2,7 @@
 import { type Component } from 'vue';
 import { NP, NTag } from 'naive-ui';
 import { TECHNOLOGIES, type Technologies } from '@/types/technology';
-// import { useDarkModeStore } from '@/stores/useDarkModeStore';
+import { useDarkModeStore } from '@/stores/useDarkModeStore';
 import {
   IconJS,
   IconReact,
@@ -43,8 +43,7 @@ const technologyIcons: {
   [TECHNOLOGIES.Node]: IconNode,
 };
 
-// const darkModeStore = useDarkModeStore();
-const darkModeStore = { isDarkMode: true };
+const darkModeStore = useDarkModeStore();
 </script>
 
 <template>
