@@ -1,14 +1,14 @@
-import { setup, createPage, url } from '@nuxt/test-utils/e2e';
+import { setup, createPage, url, type NuxtPage } from '@nuxt/test-utils/e2e';
 import { expect } from '@nuxt/test-utils/playwright';
-import { beforeEach, describe, test } from 'vitest';
+import { beforeAll, beforeEach, describe, test } from 'vitest';
 
 describe('App', { timeout: 60000 }, async () => {
   await setup();
 
   describe('Content Renders', async () => {
-    const page = await createPage();
-
-    beforeEach(async () => {
+    let page: NuxtPage;
+    beforeAll(async () => {
+      page = await createPage();
       await page.goto(url('/'));
     }, 20000);
 
