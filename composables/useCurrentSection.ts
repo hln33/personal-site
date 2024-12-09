@@ -1,7 +1,7 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 
 export const useCurrentSection = (sectionIDs: string[]) => {
-  const currentSection = ref(sectionIDs[0]);
+  const currentSection = ref('');
 
   let observer: IntersectionObserver;
   onMounted(() => {
@@ -13,7 +13,7 @@ export const useCurrentSection = (sectionIDs: string[]) => {
           }
         });
       },
-      { threshold: 0.4 },
+      { threshold: 0.4 }
     );
 
     sectionIDs.forEach((id) => {

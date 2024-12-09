@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type CSSProperties, onMounted } from 'vue';
-import { NDivider, NIcon, NTab, NTabs, NSwitch } from 'naive-ui';
+import { NDivider, NIcon, NTab, NTabs, NSkeleton, NSwitch } from 'naive-ui';
 import { DarkModeOutlined, LightModeOutlined } from '@vicons/material';
 import { useCurrentSection } from '@/composables/useCurrentSection';
 import { vPreventFocusOnClick } from '@/directives/directives';
@@ -74,19 +74,21 @@ onMounted(() => {
       vertical
     />
 
-    <n-switch
-      aria-label="Dark mode toggle"
-      :rail-style="darkModeRailStyle"
-      v-model:value="darkModeStore.isDarkMode"
-      v-prevent-focus-on-click
-    >
-      <template #checked-icon>
-        <n-icon :component="DarkModeOutlined" />
-      </template>
-      <template #unchecked-icon>
-        <n-icon :component="LightModeOutlined" />
-      </template>
-    </n-switch>
+    <ClientOnly>
+      <n-switch
+        aria-label="Dark mode toggle"
+        :rail-style="darkModeRailStyle"
+        v-model:value="darkModeStore.isDarkMode"
+        v-prevent-focus-on-click
+      >
+        <template #checked-icon>
+          <n-icon :component="DarkModeOutlined" />
+        </template>
+        <template #unchecked-icon>
+          <n-icon :component="LightModeOutlined" />
+        </template>
+      </n-switch>
+    </ClientOnly>
   </div>
 </template>
 

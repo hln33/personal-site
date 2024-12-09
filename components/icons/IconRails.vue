@@ -8,8 +8,6 @@ import { NIcon } from 'naive-ui';
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 395.9 139.2"
-      width="2500"
-      height="879"
     >
       <path
         class="st0"

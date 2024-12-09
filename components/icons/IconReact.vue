@@ -5,9 +5,7 @@ import { NIcon } from 'naive-ui';
 <template>
   <n-icon size="16">
     <svg
-      height="2500"
       viewBox="175.7 78 490.6 436.9"
-      width="2194"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g fill="#61dafb">

@@ -7,7 +7,20 @@ import {
   NConfigProvider,
   type GlobalThemeOverrides,
 } from 'naive-ui';
-import { useDarkModeStore } from './stores/useDarkModeStore';
+import { useDarkModeStore } from '@/stores/useDarkModeStore';
+
+useHead({
+  script: [
+    {
+      id: 'check-dark-mode',
+      innerHTML: `
+        if (localStorage.getItem('darkMode') === 'true') {
+          document.documentElement.classList.add('dark-mode');
+        }
+      `,
+    },
+  ],
+});
 
 const darkModeStore = useDarkModeStore();
 const { isDarkMode } = storeToRefs(darkModeStore);
@@ -20,6 +33,10 @@ const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(() => ({
     pTextColor: isDarkMode.value ? 'rgba(255, 255, 255, 0.82)' : 'rgba(0, 0, 0, 0.82)',
   },
 }));
+
+// onMounted(() => {
+//   debugger;
+// });
 </script>
 
 <template>

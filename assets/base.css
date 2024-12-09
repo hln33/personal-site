@@ -44,7 +44,6 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--light-background-color);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -68,6 +67,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.dark-mode {
+html {
+  background: var(--light-background-color);
+}
+html.dark-mode {
   background: var(--dark-background-color);
+}
+
+/* Naive UI overrides so that SSG can work */
+html.dark-mode .n-p,
+html.dark-mode .n-button {
+  color: rgba(255, 255, 255, 0.82) !important
+}
+html.dark-mode .n-h,
+html.dark-mode .n-text,
+html.dark-mode .n-divider,
+html.dark-mode .n-tabs-tab 
+{
+  color: rgba(255, 255, 255, 0.9) !important
+}
+html.dark-mode .n-divider__line {
+  background-color: rgba(255, 255, 255, 0.09) !important
+}
+html.dark-mode .n-tabs-tab--active, 
+html.dark-mode .n-tabs-bar {
+  color: #63e2b7 !important
+}
+html.dark-mode .n-tag__border {
+  border-color: rgba(255, 255, 255, 0.24) !important;
+}
+html.dark-mode .n-tag {
+  background: rgba(0, 0, 0, 0.3) !important;
 }

@@ -13,4 +13,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  build: {
+    transpile: ['vueuc'],
+  },
 });

@@ -88,9 +88,6 @@ const darkModeStore = useDarkModeStore();
   color: var(--vt-c-text-dark-1);
   cursor: inherit;
 }
-.technology.dark-mode {
-  background: rgba(0, 0, 0, 0.3);
-}
 
 @media (min-width: 600px) {
   .description {
