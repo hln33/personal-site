@@ -1,6 +1,6 @@
 # My Portfolio Site
-- Static Site Generation (SSG) is done by **Nuxt**
-- Much of the UI heavy lifting is done with **NaiveUI**
+- Static Site Generation (SSG) is done by [Nuxt](https://nuxt.com/)
+- Much of the UI heavy lifting is done with [NaiveUI](https://www.naiveui.com/en-US/os-theme)
 
 ## Setup
 
@@ -32,4 +32,4 @@ Locally preview production build:
 npm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Check out the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
