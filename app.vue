@@ -34,9 +34,9 @@ const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(() => ({
   },
 }));
 
-// onMounted(() => {
-//   debugger;
-// });
+onMounted(() => {
+  // console.log(document.getElementById('theme-toggle')?.setAttribute('dark', 'true'));
+});
 </script>
 
 <template>

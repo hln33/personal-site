@@ -76,7 +76,8 @@ onMounted(() => {
 
     <ClientOnly>
       <n-switch
-        aria-label="Dark mode toggle"
+        id="theme-toggle"
+        aria-label="Theme toggle"
         :rail-style="darkModeRailStyle"
         v-model:value="darkModeStore.isDarkMode"
         v-prevent-focus-on-click
@@ -88,6 +89,14 @@ onMounted(() => {
           <n-icon :component="LightModeOutlined" />
         </template>
       </n-switch>
+
+      <template #fallback>
+        <n-skeleton
+          round
+          :width="40"
+          :height="20"
+        />
+      </template>
     </ClientOnly>
   </div>
 </template>

@@ -99,3 +99,7 @@ html.dark-mode .n-tag__border {
 html.dark-mode .n-tag {
   background: rgba(0, 0, 0, 0.3) !important;
 }
+html.dark-mode .n-skeleton {
+  --n-color-start: rgba(255, 255, 255, 0.12) !important;
+  --n-color-end: rgba(255, 255, 255, 0.18) !important;
+}
