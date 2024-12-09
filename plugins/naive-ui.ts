@@ -2,39 +2,9 @@ import { setup } from '@css-render/vue3-ssr';
 
 // https://www.reddit.com/r/Nuxt/comments/170ree2/my_naiveui_elements_dont_load_instantly/
 export default defineNuxtPlugin((nuxtApp) => {
-  if (process.server) {
+  if (import.meta.server && nuxtApp.ssrContext) {
     const { collect } = setup(nuxtApp.vueApp);
-    const originalRenderMeta = nuxtApp.ssrContext?.renderMeta;
 
-    // @ts-ignore
-    nuxtApp.ssrContext = nuxtApp.ssrContext || {};
-    // @ts-ignore
-    nuxtApp.ssrContext.renderMeta = () => {
-      if (!originalRenderMeta) {
-        return {
-          headTags: collect(),
-        };
-      }
-
-      const originalMeta = originalRenderMeta();
-      if ('then' in originalMeta) {
-        return originalMeta.then((resolvedOriginalMeta: any) => {
-          return {
-            ...resolvedOriginalMeta,
-            headTags: resolvedOriginalMeta.headTags + collect(),
-          };
-        });
-      }
-
-      return {
-        ...originalMeta,
-        headTags: originalMeta.headTags + collect(),
-      };
-    };
-
-    // @ts-ignore
-    nuxtApp.ssrContext.head = nuxtApp.ssrContext.head || [];
-    // @ts-ignore
     nuxtApp.ssrContext.head.push({
       style: () =>
         collect()

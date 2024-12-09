@@ -33,10 +33,6 @@ const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(() => ({
     pTextColor: isDarkMode.value ? 'rgba(255, 255, 255, 0.82)' : 'rgba(0, 0, 0, 0.82)',
   },
 }));
-
-onMounted(() => {
-  // console.log(document.getElementById('theme-toggle')?.setAttribute('dark', 'true'));
-});
 </script>
 
 <template>
