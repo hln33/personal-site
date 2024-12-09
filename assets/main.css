@@ -15,7 +15,7 @@ a,
   padding: 3px;
 }
 
-*:focus {
+*:focus-visible {
   outline: solid var(--tertiary-color);
 }
 

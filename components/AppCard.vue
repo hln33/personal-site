@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { NCard } from 'naive-ui';
 import { type Technologies } from '@/types/technology';
-import { vPreventFocusOnClick } from '@/directives/directives';
 
 const props = defineProps<{
   header: string;
@@ -27,7 +26,6 @@ const redirect = () => {
     @keydown.enter="redirect"
     hoverable
     :bordered="false"
-    v-prevent-focus-on-click
   >
     <AppCardHeader
       class="card-header"
@@ -57,8 +55,8 @@ const redirect = () => {
 /* dim cards that are not being hovered/focused */
 .card:hover ~ .card,
 .card:has(~ .card:hover),
-.card:focus ~ .card,
-.card:has(~ .card:focus) {
+.card:focus-visible ~ .card,
+.card:has(~ .card:focus-visible) {
   opacity: 0.4;
 }
 

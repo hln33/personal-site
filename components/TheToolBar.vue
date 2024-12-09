@@ -3,7 +3,6 @@ import { type CSSProperties, onMounted } from 'vue';
 import { NDivider, NIcon, NTab, NTabs, NSkeleton, NSwitch } from 'naive-ui';
 import { DarkModeOutlined, LightModeOutlined } from '@vicons/material';
 import { useCurrentSection } from '@/composables/useCurrentSection';
-import { vPreventFocusOnClick } from '@/directives/directives';
 import { useDarkModeStore } from '@/stores/useDarkModeStore';
 
 const experienceSectionID = 'experience';
@@ -44,7 +43,6 @@ onMounted(() => {
           name="experience"
           @click="scrollToElement(experienceSectionID)"
           @keydown.enter="scrollToElement(experienceSectionID)"
-          v-prevent-focus-on-click
         >
           <span
             class="tab-text"
@@ -57,7 +55,6 @@ onMounted(() => {
           name="projects"
           @click="scrollToElement(projectsSectionID)"
           @keydown.enter="scrollToElement(projectsSectionID)"
-          v-prevent-focus-on-click
         >
           <span
             class="tab-text"
@@ -80,7 +77,6 @@ onMounted(() => {
         aria-label="Theme toggle"
         :rail-style="darkModeRailStyle"
         v-model:value="darkModeStore.isDarkMode"
-        v-prevent-focus-on-click
       >
         <template #checked-icon>
           <n-icon :component="DarkModeOutlined" />
