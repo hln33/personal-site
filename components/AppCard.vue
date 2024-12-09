@@ -12,9 +12,7 @@ const props = defineProps<{
 }>();
 
 const redirect = () => {
-  if (props.externalLink) {
-    window.open(props.externalLink);
-  }
+  window.open(props.externalLink);
 };
 </script>
 
