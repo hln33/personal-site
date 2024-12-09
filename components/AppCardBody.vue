@@ -4,20 +4,20 @@ import { NP, NTag } from 'naive-ui';
 import { TECHNOLOGIES, type Technologies } from '@/types/technology';
 import { useDarkModeStore } from '@/stores/useDarkModeStore';
 import {
-  IconJS,
-  IconReact,
-  IconJQuery,
-  IconRuby,
-  IconRails,
   IconJava,
-  IconTS,
-  IconPostgreSQL,
-  IconRust,
-  IconPython,
+  IconJQuery,
+  IconJS,
   IconJupyter,
-  IconPandas,
   IconNode,
-} from './icons';
+  IconPandas,
+  IconPostgreSQL,
+  IconPython,
+  IconRails,
+  IconReact,
+  IconRuby,
+  IconRust,
+  IconTS,
+} from '#components';
 
 const props = defineProps<{
   description: string;
