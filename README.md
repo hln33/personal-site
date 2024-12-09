@@ -20,16 +20,16 @@ npm run dev
 
 ## Production
 
-Build the application for production:
+Statically generate the application for production:
 
 ```bash
-npm run build
+npm run generate
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+npx .output/public
 ```
 
 Check out the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
