@@ -1,5 +1,7 @@
 import { setup, createPage, url, type NuxtPage } from '@nuxt/test-utils/e2e';
 import { expect } from '@nuxt/test-utils/playwright';
+import { chromium } from 'playwright-core';
+import AxeBuilder from '@axe-core/playwright';
 import { beforeAll, describe, test } from 'vitest';
 
 describe('App', { timeout: 60000 }, async () => {
@@ -87,5 +89,16 @@ describe('App', { timeout: 60000 }, async () => {
       ).toBeVisible();
       await expect(page.getByRole('heading', { name: 'Spring 2023' })).toBeVisible();
     });
+  });
+
+  test.only('Scan for automatically detectable accessibility issues', async () => {
+    const browser = await chromium.launch();
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto(url('/'));
+
+    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+    expect(accessibilityScanResults.violations).toEqual([]);
   });
 });

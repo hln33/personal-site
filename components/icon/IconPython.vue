@@ -4,6 +4,7 @@ import { NIcon } from 'naive-ui';
 
 <template>
   <n-icon
+    aria-label="Python Programming Language Logo"
     class="icon"
     size="30"
   >

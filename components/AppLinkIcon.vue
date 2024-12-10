@@ -2,7 +2,12 @@
 import type { Component } from 'vue';
 import { NButton, NIcon } from 'naive-ui';
 
-const props = defineProps<{ link: string; size: number; component: Component }>();
+const props = defineProps<{
+  link: string;
+  size: number;
+  component: Component;
+  iconAltText: String;
+}>();
 
 const redirect = () => {
   if (props.link) {
@@ -18,6 +23,7 @@ const redirect = () => {
     @click="redirect"
   >
     <n-icon
+      :aria-label="props.iconAltText"
       :size="props.size"
       :component="props.component"
     />

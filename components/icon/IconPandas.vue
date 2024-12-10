@@ -3,7 +3,10 @@ import { NIcon } from 'naive-ui';
 </script>
 
 <template>
-  <n-icon size="16">
+  <n-icon
+    aria-label="Pandas Logo"
+    size="16"
+  >
     <svg
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:cc="http://creativecommons.org/ns#"

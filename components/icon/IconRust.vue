@@ -3,7 +3,10 @@ import { NIcon } from 'naive-ui';
 </script>
 
 <template>
-  <n-icon size="20">
+  <n-icon
+    aria-label="Rust Programming Language Logo"
+    size="20"
+  >
     <svg
       viewBox="0 0 1200 800"
       version="1.1"

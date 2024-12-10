@@ -3,7 +3,10 @@ import { NIcon } from 'naive-ui';
 </script>
 
 <template>
-  <n-icon size="16">
+  <n-icon
+    aria-label="JQuery Logo"
+    size="16"
+  >
     <svg
       viewBox="-1.19275382 .5 25.19275382 24.582"
       xmlns="http://www.w3.org/2000/svg"

@@ -38,10 +38,9 @@ const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(() => ({
     :theme="isDarkMode ? darkTheme : lightTheme"
     :themeOverrides
   >
-    <TheToolBar class="toolbar" />
-
     <header>
-      <TheAboutMe />
+      <TheToolBar class="toolbar" />
+      <TheAboutMe class="aboutme" />
     </header>
     <div>
       <main>
@@ -55,6 +54,9 @@ const themeOverrides: ComputedRef<GlobalThemeOverrides> = computed(() => ({
 </template>
 
 <style scoped>
+header {
+  display: contents;
+}
 .toolbar {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -81,7 +83,7 @@ main {
 }
 
 @media (min-width: 1050px) {
-  header {
+  .aboutme {
     padding-right: calc(var(--section-gap) / 2);
 
     position: sticky;

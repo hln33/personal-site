@@ -25,7 +25,10 @@ const props = defineProps<{
       </n-text>
     </n-h3>
 
-    <n-h4 class="subheader">
+    <n-h4
+      v-if="props.subheader"
+      class="subheader"
+    >
       <n-text depth="2">
         {{ props.subheader }}
       </n-text>

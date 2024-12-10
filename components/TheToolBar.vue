@@ -33,7 +33,7 @@ onMounted(() => {
     id="toolbar"
     role="toolbar"
   >
-    <nav>
+    <nav aria-label="intra-page navigation">
       <n-tabs
         size="large"
         :tabsPadding="1"

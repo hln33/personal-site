@@ -3,7 +3,10 @@ import { NIcon } from 'naive-ui';
 </script>
 
 <template>
-  <n-icon size="16">
+  <n-icon
+    aria-label="NodeJS Logo"
+    size="16"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       x="0px"

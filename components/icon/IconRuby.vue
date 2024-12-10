@@ -3,7 +3,10 @@ import { NIcon } from 'naive-ui';
 </script>
 
 <template>
-  <n-icon size="16">
+  <n-icon
+    aria-label="Ruby Programming Language Logo"
+    size="16"
+  >
     <svg
       viewBox="0 0 256 255"
       xmlns="http://www.w3.org/2000/svg"

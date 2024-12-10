@@ -5,7 +5,7 @@ import { NP } from 'naive-ui';
 <template>
   <footer>
     <small>
-      <n-p :depth="3">
+      <n-p :depth="2">
         Built with
         <AppLinkText
           class="link"
@@ -27,5 +27,6 @@ import { NP } from 'naive-ui';
 small,
 .link {
   font-size: 1.1em;
+  color: black;
 }
 </style>

@@ -3,7 +3,10 @@ import { NIcon } from 'naive-ui';
 </script>
 
 <template>
-  <n-icon size="13">
+  <n-icon
+    aria-label="TypeScript Programming Language Logo"
+    size="13"
+  >
     <svg
       viewBox="0 0 640 640"
       xmlns="http://www.w3.org/2000/svg"

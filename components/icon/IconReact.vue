@@ -3,7 +3,10 @@ import { NIcon } from 'naive-ui';
 </script>
 
 <template>
-  <n-icon size="16">
+  <n-icon
+    aria-label="ReactJS Logo"
+    size="16"
+  >
     <svg
       viewBox="175.7 78 490.6 436.9"
       xmlns="http://www.w3.org/2000/svg"
