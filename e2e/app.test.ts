@@ -1,6 +1,6 @@
 import { setup, createPage, url, type NuxtPage } from '@nuxt/test-utils/e2e';
 import { expect } from '@nuxt/test-utils/playwright';
-import { beforeAll, beforeEach, describe, test } from 'vitest';
+import { beforeAll, describe, test } from 'vitest';
 
 describe('App', { timeout: 60000 }, async () => {
   await setup();
@@ -42,6 +42,30 @@ describe('App', { timeout: 60000 }, async () => {
       await expect(
         page.getByRole('link', { exact: true, name: 'View Full Resumé' })
       ).toBeVisible();
+    });
+
+    test('Projects', async () => {
+      await expect(
+        page.getByRole('heading', { exact: true, name: 'Projects' })
+      ).toBeVisible();
+
+      await expect(
+        page.getByRole('heading', { name: 'Community Based Rehabilitation' })
+      ).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Fall 2024' })).toBeVisible();
+
+      await expect(page.getByRole('heading', { name: 'Rlox' })).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Summer 2024' })).toBeVisible();
+
+      await expect(
+        page.getByRole('heading', { name: 'NBA All-Star Classifier' })
+      ).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Summer 2023' })).toBeVisible();
+
+      await expect(
+        page.getByRole('heading', { name: 'Investment Simulator' })
+      ).toBeVisible();
+      await expect(page.getByRole('heading', { name: 'Spring 2023' })).toBeVisible();
     });
   });
 });
