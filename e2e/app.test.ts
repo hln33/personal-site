@@ -1,20 +1,24 @@
 import { setup, createPage, url, type NuxtPage } from '@nuxt/test-utils/e2e';
 import { expect } from '@nuxt/test-utils/playwright';
-import { chromium } from 'playwright-core';
+import { chromium, type Page } from 'playwright-core';
 import AxeBuilder from '@axe-core/playwright';
-import { beforeAll, describe, test } from 'vitest';
+import { beforeAll, beforeEach, describe, test } from 'vitest';
 
 describe('App', { timeout: 60000 }, async () => {
   await setup();
 
-  describe('Content Renders', async () => {
-    let page: NuxtPage;
-    beforeAll(async () => {
-      page = await createPage();
+  describe('Content Renders', () => {
+    const generatePage = async () => {
+      const page = await createPage();
+
       await page.goto(url('/'));
-    }, 20000);
+
+      return page;
+    };
 
     test('Toolbar', async () => {
+      const page = await generatePage();
+
       const toolbar = page.getByRole('toolbar');
       await expect(toolbar).toBeVisible();
 
@@ -28,6 +32,8 @@ describe('App', { timeout: 60000 }, async () => {
     });
 
     test('About Me', async () => {
+      const page = await generatePage();
+
       await expect(page.getByRole('heading', { name: 'Harry Nguyen' })).toBeVisible();
       await expect(
         page.getByRole('heading', { name: 'Software Engineer' })
@@ -43,6 +49,8 @@ describe('App', { timeout: 60000 }, async () => {
     });
 
     test('Work Experience', async () => {
+      const page = await generatePage();
+
       await expect(
         page.getByRole('heading', { exact: true, name: 'Experience' })
       ).toBeVisible();
@@ -67,6 +75,8 @@ describe('App', { timeout: 60000 }, async () => {
     });
 
     test('Projects', async () => {
+      const page = await generatePage();
+
       await expect(
         page.getByRole('heading', { exact: true, name: 'Projects' })
       ).toBeVisible();
@@ -91,14 +101,33 @@ describe('App', { timeout: 60000 }, async () => {
     });
   });
 
-  test.only('Scan for automatically detectable accessibility issues', async () => {
-    const browser = await chromium.launch();
-    const context = await browser.newContext();
-    const page = await context.newPage();
-    await page.goto(url('/'));
+  describe('Scan for automatically detectable accessibility issues', async () => {
+    const generatePage = async () => {
+      const browser = await chromium.launch();
+      const context = await browser.newContext();
+      const page = await context.newPage();
 
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+      await page.goto(url('/'));
 
-    expect(accessibilityScanResults.violations).toEqual([]);
+      return page;
+    };
+
+    test('dark mode', async () => {
+      const page = await generatePage();
+      await page.evaluate(() => localStorage.setItem('darkMode', 'true'));
+      await page.reload();
+      const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+      expect(accessibilityScanResults.violations).toEqual([]);
+    });
+
+    test('light mode', async () => {
+      const page = await generatePage();
+      await page.evaluate(() => localStorage.setItem('darkMode', 'false'));
+      await page.reload();
+      const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+      expect(accessibilityScanResults.violations).toEqual([]);
+    });
   });
 });
