@@ -12,12 +12,32 @@ describe('App', { timeout: 60000 }, async () => {
       await page.goto(url('/'));
     }, 20000);
 
+    test('Toolbar', async () => {
+      const toolbar = page.getByRole('toolbar');
+      await expect(toolbar).toBeVisible();
+
+      const navBar = toolbar.getByRole('navigation');
+      await expect(navBar).toBeVisible();
+      await expect(navBar.getByText('Experience')).toBeVisible();
+      await expect(navBar.getByText('Projects')).toBeVisible();
+
+      const themeToggle = toolbar.getByLabel('Theme toggle');
+      await expect(themeToggle).toBeVisible();
+    });
+
     test('About Me', async () => {
       await expect(page.getByRole('heading', { name: 'Harry Nguyen' })).toBeVisible();
       await expect(
         page.getByRole('heading', { name: 'Software Engineer' })
       ).toBeVisible();
       await expect(page.getByText("I'm a software engineer")).toBeVisible();
+
+      await expect(
+        page.getByRole('button', { name: 'Link to personal GitHub account' })
+      ).toBeVisible();
+      await expect(
+        page.getByRole('button', { name: 'Link to LinkedIn account' })
+      ).toBeVisible();
     });
 
     test('Work Experience', async () => {
