@@ -14,7 +14,13 @@ useHead({
     {
       id: 'check-dark-mode',
       innerHTML: `
-        if (localStorage.getItem('darkMode') === 'true') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedPreference = localStorage.getItem('darkMode');
+
+        if (
+          savedPreference === 'true' || 
+          (savedPreference === null && prefersDark)
+        ) {
           document.documentElement.classList.add('dark-mode');
         }
       `,

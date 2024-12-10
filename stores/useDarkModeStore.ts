@@ -12,21 +12,24 @@ export const useDarkModeStore = defineStore('darkMode', () => {
     isDarkMode.value = e.matches;
   };
 
-  let colorSchemeMedia: MediaQueryList | null;
+  let darkModeMedia: MediaQueryList | null;
 
   onMounted(() => {
-    colorSchemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-    colorSchemeMedia.addEventListener('change', handlePreferenceChange);
+    darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    darkModeMedia.addEventListener('change', handlePreferenceChange);
 
     const savedPreference = localStorage.getItem(STORAGE_KEY);
-    if (savedPreference) {
-      isDarkMode.value = savedPreference === 'true';
+    if (
+      savedPreference === 'true' ||
+      (savedPreference === null && darkModeMedia.matches)
+    ) {
+      isDarkMode.value = true;
     }
     document.documentElement.classList.toggle(DARK_MODE_CLASS, isDarkMode.value);
   });
 
   onUnmounted(() => {
-    colorSchemeMedia?.removeEventListener('change', handlePreferenceChange);
+    darkModeMedia?.removeEventListener('change', handlePreferenceChange);
   });
 
   watch(isDarkMode, () => {
