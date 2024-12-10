@@ -1,8 +1,8 @@
-import { setup, createPage, url, type NuxtPage } from '@nuxt/test-utils/e2e';
+import { setup, createPage, url } from '@nuxt/test-utils/e2e';
 import { expect } from '@nuxt/test-utils/playwright';
-import { chromium, type Page } from 'playwright-core';
+import { chromium } from 'playwright-core';
 import AxeBuilder from '@axe-core/playwright';
-import { beforeAll, beforeEach, describe, test } from 'vitest';
+import { describe, test } from 'vitest';
 
 describe('App', { timeout: 60000 }, async () => {
   await setup();
@@ -114,6 +114,7 @@ describe('App', { timeout: 60000 }, async () => {
 
     test('dark mode', async () => {
       const page = await generatePage();
+
       await page.evaluate(() => localStorage.setItem('darkMode', 'true'));
       await page.reload();
       const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
@@ -123,6 +124,7 @@ describe('App', { timeout: 60000 }, async () => {
 
     test('light mode', async () => {
       const page = await generatePage();
+
       await page.evaluate(() => localStorage.setItem('darkMode', 'false'));
       await page.reload();
       const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
