@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import experiences from '@/config/experience';
+import experiences from '~/content/experience';
 </script>
 
 <template>

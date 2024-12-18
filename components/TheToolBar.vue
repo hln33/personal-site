@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type CSSProperties, onMounted } from 'vue';
+import { type CSSProperties } from 'vue';
 import { NDivider, NIcon, NTab, NTabs, NSkeleton, NSwitch } from 'naive-ui';
 import { DarkModeOutlined, LightModeOutlined } from '@vicons/material';
 import { useCurrentSection } from '@/composables/useCurrentSection';

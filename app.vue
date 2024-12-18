@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed, type ComputedRef } from 'vue';
 import { storeToRefs } from 'pinia';
 import {
   darkTheme,

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Component } from 'vue';
 import { NButton, NIcon } from 'naive-ui';
 
 const props = defineProps<{

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import projects from '@/config/projects';
+import projects from '~/content/projects';
 </script>
 
 <template>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { type Component } from 'vue';
 import { NP, NTag } from 'naive-ui';
 import { TECHNOLOGIES, type Technologies } from '@/types/technology';
 import { useDarkModeStore } from '@/stores/useDarkModeStore';
