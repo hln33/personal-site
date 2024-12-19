@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { NText, NH3, NH4 } from 'naive-ui';
+import { NA, NText, NH3, NH4 } from 'naive-ui';
 
 const props = defineProps<{
   header: string;
   subheader?: string;
   date: string;
+  externalLink: string;
 }>();
 </script>
 
@@ -15,7 +16,13 @@ const props = defineProps<{
         class="title"
         depth="1"
       >
-        {{ props.header }}
+        <a
+          class="link"
+          :href="props.externalLink"
+          target="_blank"
+        >
+          {{ props.header }}
+        </a>
       </n-text>
       <n-text
         class="date"
@@ -47,6 +54,15 @@ const props = defineProps<{
   font-size: 1.2rem;
   max-width: 65%;
 }
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+.link:focus {
+  /* the entire card is outlined instead */
+  outline: none;
+}
+
 .date {
   font-size: 0.8rem;
 }

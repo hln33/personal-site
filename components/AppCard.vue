@@ -11,7 +11,8 @@ const props = defineProps<{
   externalLink: string;
 }>();
 
-const redirect = () => {
+const redirect = (e: Event) => {
+  e.preventDefault();
   window.open(props.externalLink);
 };
 </script>
@@ -19,9 +20,7 @@ const redirect = () => {
 <template>
   <NCard
     class="card"
-    tabindex="0"
-    @click="redirect"
-    @keydown.enter="redirect"
+    @click="redirect($event)"
     hoverable
     :bordered="false"
   >
@@ -30,6 +29,7 @@ const redirect = () => {
       :header="props.header"
       :subheader="props.subheader"
       :date="props.date"
+      :externalLink="props.externalLink"
     />
 
     <AppCardBody
@@ -46,15 +46,15 @@ const redirect = () => {
   cursor: pointer;
 }
 .card:hover,
-.card:focus {
+.card:focus-within {
   background: rgba(75, 116, 231, 0.25);
 }
 
-/* dim cards that are not being hovered/focused */
+/* dim cards that are not being hovered/focu  sed */
 .card:hover ~ .card,
 .card:has(~ .card:hover),
-.card:focus-visible ~ .card,
-.card:has(~ .card:focus-visible) {
+.card:focus-within ~ .card,
+.card:has(~ .card:focus-within) {
   opacity: 0.4;
 }
 

@@ -4,14 +4,12 @@ import { NButton, NIcon } from 'naive-ui';
 const props = defineProps<{
   link: string;
   size: number;
-  component: Component;
   iconAltText: String;
+  component: Component;
 }>();
 
 const redirect = () => {
-  if (props.link) {
-    window.open(props.link);
-  }
+  window.open(props.link);
 };
 </script>
 
