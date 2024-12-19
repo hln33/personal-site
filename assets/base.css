@@ -107,9 +107,9 @@ html.dark-mode .n-skeleton {
 }
 
 html.dark-mode .card {
-  background: rgba(80, 90, 140, 0.8);
+  background: rgba(75, 85, 130, 0.8);
 }
 html.dark-mode .card:hover,
 html.dark-mode .card:focus-within {
-  background: rgba(80, 90, 140, 1);
+  background: rgba(75, 85, 130, 1);
 }
