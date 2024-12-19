@@ -19,6 +19,7 @@ const props = defineProps<{
       >
         {{ props.header }}
       </a>
+
       <n-text class="date">
         {{ props.date }}
       </n-text>
@@ -28,7 +29,7 @@ const props = defineProps<{
       v-if="props.subheader"
       class="subheader"
     >
-      <n-text class="subheader-text">
+      <n-text>
         {{ props.subheader }}
       </n-text>
     </n-h4>

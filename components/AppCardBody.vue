@@ -71,7 +71,6 @@ const darkModeStore = useDarkModeStore();
 <style scoped>
 .description {
   font-size: 0.9rem;
-  /* color: var(--text-dark); */
 }
 
 .technologies {
