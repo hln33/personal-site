@@ -50,8 +50,6 @@ const redirect = (e: Event) => {
   background: rgba(180, 190, 230, 1);
 }
 
-/* dark mode cardbackground: rgba(75, 116, 231, 0.1); */
-
 /* dim cards that are not being hovered/focu  sed */
 .card:hover ~ .card,
 .card:has(~ .card:hover),
