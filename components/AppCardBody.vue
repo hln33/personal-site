@@ -58,6 +58,7 @@ const darkModeStore = useDarkModeStore();
       :class="{ 'dark-mode': darkModeStore.isDarkMode }"
       size="large"
       round
+      :bordered="false"
     >
       <template #icon>
         <component :is="technologyIcons[tech]" />
@@ -70,6 +71,7 @@ const darkModeStore = useDarkModeStore();
 <style scoped>
 .description {
   font-size: 0.9rem;
+  /* color: var(--text-dark); */
 }
 
 .technologies {
@@ -83,8 +85,8 @@ const darkModeStore = useDarkModeStore();
 }
 
 .technology {
-  background: rgba(0, 0, 0, 0.8);
-  color: var(--vt-c-text-dark-1);
+  background: rgba(25, 25, 25, 0.8);
+  color: var(--text-dark);
   cursor: inherit;
 }
 

@@ -1,12 +1,6 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --text-dark: rgba(255, 255, 255, 0.9);
+  --text-light: rgb(51, 54, 57);
 
   --light-background-color: rgb(242, 240, 236);
   --light-background-color-mute: rgb(134, 134, 132);
@@ -15,21 +9,19 @@
   --dark-background-color-mute: #2f2f2f;
 
   --tertiary-color: #63e2b7;
-}
-
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--light-background-color);
-  --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
   --nav-bar-height: 60px;
 }
 
+/* semantic color variables */
+:root {
+  --color-background: var(--light-background-color);
+
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--dark-background-color);
-    --color-text: var(--vt-c-text-dark-2);
   }
 }
 
@@ -43,7 +35,6 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -89,7 +80,7 @@ html.dark-mode .n-h,
 html.dark-mode .n-text,
 html.dark-mode .n-divider,
 html.dark-mode .n-tabs-tab {
-  color: rgba(255, 255, 255, 0.9) !important
+  color: var(--text-dark) !important
 }
 
 html.dark-mode .n-divider__line {
@@ -107,7 +98,7 @@ html.dark-mode .n-tag__border {
 }
 
 html.dark-mode .n-tag {
-  background: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 
 html.dark-mode .n-skeleton {
@@ -116,9 +107,9 @@ html.dark-mode .n-skeleton {
 }
 
 html.dark-mode .card {
-  background: rgba(75, 116, 231, 0.25);
+  background: rgba(80, 90, 140, 0.8);
 }
 html.dark-mode .card:hover,
 html.dark-mode .card:focus-within {
-  background: rgba(75, 116, 231, 0.4);
+  background: rgba(80, 90, 140, 1);
 }

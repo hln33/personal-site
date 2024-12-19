@@ -41,13 +41,13 @@ const redirect = (e: Event) => {
 
 <style scoped>
 .card {
-  background: rgba(150, 167, 215, 0.25);
+  background: rgba(180, 190, 230, 0.8);
   transition: opacity 0.5s;
   cursor: pointer;
 }
 .card:hover,
 .card:focus-within {
-  background: rgba(150, 167, 215, 0.35);
+  background: rgba(180, 190, 230, 1);
 }
 
 /* dark mode cardbackground: rgba(75, 116, 231, 0.1); */
