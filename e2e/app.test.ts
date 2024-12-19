@@ -7,7 +7,7 @@ import { describe, test } from 'vitest';
 describe('App', { timeout: 60000 }, async () => {
   await setup();
 
-  describe('Content Renders', () => {
+  describe('Content renders for', () => {
     const generatePage = async () => {
       const page = await createPage();
 
@@ -16,7 +16,7 @@ describe('App', { timeout: 60000 }, async () => {
       return page;
     };
 
-    test('Toolbar', async () => {
+    test('toolbar', async () => {
       const page = await generatePage();
 
       const toolbar = page.getByRole('toolbar');
@@ -101,6 +101,73 @@ describe('App', { timeout: 60000 }, async () => {
     });
   });
 
+  describe('Theme toggle', () => {
+    const DARK_MODE_CLASS = 'dark-mode';
+    const THEME_TOGGLE_LABEL = 'Theme toggle';
+
+    test('initially sets page to dark mode based on user preference', async () => {
+      const page = await createPage();
+      await page.emulateMedia({ colorScheme: 'dark' });
+      await page.goto(url('/'));
+
+      const root = await page.locator('html');
+      await expect(root).toHaveClass(DARK_MODE_CLASS);
+    });
+
+    test('initially sets page to light mode based on user preference', async () => {
+      const page = await createPage();
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.goto(url('/'));
+
+      const root = await page.locator('html');
+      await expect(root).not.toHaveClass(DARK_MODE_CLASS);
+    });
+
+    test('can switch from dark to light mode', async () => {
+      const page = await createPage();
+      await page.emulateMedia({ colorScheme: 'dark' });
+      await page.goto(url('/'));
+
+      const root = await page.locator('html');
+      const themeToggle = await page.getByLabel(THEME_TOGGLE_LABEL);
+
+      await expect(root).toHaveClass(DARK_MODE_CLASS);
+      await expect(themeToggle).toBeChecked();
+
+      await themeToggle.click();
+
+      await expect(themeToggle).not.toBeChecked();
+      await expect(root).not.toHaveClass(DARK_MODE_CLASS);
+
+      await page.reload();
+
+      await expect(themeToggle).not.toBeChecked();
+      await expect(root).not.toHaveClass(DARK_MODE_CLASS);
+    });
+
+    test('can switch from light to dark mode', async () => {
+      const page = await createPage();
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.goto(url('/'));
+
+      const root = await page.locator('html');
+      const themeToggle = await page.getByLabel(THEME_TOGGLE_LABEL);
+
+      await expect(root).not.toHaveClass(DARK_MODE_CLASS);
+      await expect(themeToggle).not.toBeChecked();
+
+      await themeToggle.click();
+
+      await expect(themeToggle).toBeChecked();
+      await expect(root).toHaveClass(DARK_MODE_CLASS);
+
+      await page.reload();
+
+      await expect(themeToggle).toBeChecked();
+      await expect(root).toHaveClass(DARK_MODE_CLASS);
+    });
+  });
+
   describe('Scan for automatically detectable accessibility issues', async () => {
     const generatePage = async () => {
       const browser = await chromium.launch();
@@ -112,7 +179,7 @@ describe('App', { timeout: 60000 }, async () => {
       return page;
     };
 
-    test('dark mode', async () => {
+    test('in dark mode', async () => {
       const page = await generatePage();
 
       await page.evaluate(() => localStorage.setItem('darkMode', 'true'));
@@ -122,7 +189,7 @@ describe('App', { timeout: 60000 }, async () => {
       expect(accessibilityScanResults.violations).toEqual([]);
     });
 
-    test('light mode', async () => {
+    test('in light mode', async () => {
       const page = await generatePage();
 
       await page.evaluate(() => localStorage.setItem('darkMode', 'false'));
