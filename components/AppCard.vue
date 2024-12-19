@@ -41,7 +41,7 @@ const redirect = (e: Event) => {
 
 <style scoped>
 .card {
-  background: rgba(180, 190, 230, 0.8);
+  background: rgba(180, 190, 230, 0.5);
   transition: opacity 0.5s;
   cursor: pointer;
 }
