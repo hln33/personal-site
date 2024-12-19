@@ -20,9 +20,9 @@ const redirect = (e: Event) => {
 <template>
   <NCard
     class="card"
-    @click="redirect($event)"
-    hoverable
     :bordered="false"
+    hoverable
+    @click="redirect($event)"
   >
     <AppCardHeader
       class="card-header"
@@ -41,14 +41,16 @@ const redirect = (e: Event) => {
 
 <style scoped>
 .card {
-  background: rgba(75, 116, 231, 0.1);
+  background: rgba(150, 167, 215, 0.25);
   transition: opacity 0.5s;
   cursor: pointer;
 }
 .card:hover,
 .card:focus-within {
-  background: rgba(75, 116, 231, 0.25);
+  background: rgba(150, 167, 215, 0.35);
 }
+
+/* dark mode cardbackground: rgba(75, 116, 231, 0.1); */
 
 /* dim cards that are not being hovered/focu  sed */
 .card:hover ~ .card,

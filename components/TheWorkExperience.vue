@@ -13,9 +13,9 @@ import experiences from '~/content/experience';
         technologies,
         externalLink,
       } in experiences"
+      :key="company"
       class="card"
       :date
-      :key="company"
       :header="company"
       :subheader="title"
       :description

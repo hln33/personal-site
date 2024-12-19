@@ -52,12 +52,12 @@ const darkModeStore = useDarkModeStore();
 
   <section class="technologies">
     <n-tag
-      class="technology"
-      :class="{ 'dark-mode': darkModeStore.isDarkMode }"
-      round
-      size="large"
       v-for="tech in props.technologies"
       :key="tech"
+      class="technology"
+      :class="{ 'dark-mode': darkModeStore.isDarkMode }"
+      size="large"
+      round
     >
       <template #icon>
         <component :is="technologyIcons[tech]" />

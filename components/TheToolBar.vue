@@ -35,9 +35,9 @@ onMounted(() => {
   >
     <nav aria-label="intra-page navigation">
       <n-tabs
+        v-model:value="currentViewedSection"
         size="large"
         :tabsPadding="1"
-        v-model:value="currentViewedSection"
       >
         <n-tab
           name="experience"
@@ -73,10 +73,10 @@ onMounted(() => {
 
     <ClientOnly>
       <n-switch
+        v-model:value="darkModeStore.isDarkMode"
         id="theme-toggle"
         aria-label="Theme toggle"
         :rail-style="darkModeRailStyle"
-        v-model:value="darkModeStore.isDarkMode"
       >
         <template #checked-icon>
           <n-icon :component="DarkModeOutlined" />

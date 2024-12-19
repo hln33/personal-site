@@ -114,3 +114,11 @@ html.dark-mode .n-skeleton {
   --n-color-start: rgba(255, 255, 255, 0.12) !important;
   --n-color-end: rgba(255, 255, 255, 0.18) !important;
 }
+
+html.dark-mode .card {
+  background: rgba(75, 116, 231, 0.25);
+}
+html.dark-mode .card:hover,
+html.dark-mode .card:focus-within {
+  background: rgba(75, 116, 231, 0.4);
+}
