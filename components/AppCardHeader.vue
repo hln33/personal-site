@@ -10,8 +10,8 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div>
-    <n-h3 class="header">
+  <div class="container">
+    <n-h3 class="main-header">
       <a
         class="title"
         :href="props.externalLink"
@@ -20,33 +20,36 @@ const props = defineProps<{
         {{ props.header }}
       </a>
 
-      <n-text class="date">
-        {{ props.date }}
-      </n-text>
+      <template v-if="props.subheader">
+        · <n-text class="sub-header"> {{ props.subheader }} </n-text>
+      </template>
     </n-h3>
 
-    <n-h4
-      v-if="props.subheader"
-      class="subheader"
-    >
+    <n-h4 class="date">
       <n-text>
-        {{ props.subheader }}
+        {{ props.date }}
       </n-text>
     </n-h4>
   </div>
 </template>
 
 <style scoped>
-.header {
-  margin: 0;
+.container {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
-  align-items: center;
 }
-.title {
-  font-size: 1.2rem;
-  max-width: 65%;
 
+.main-header {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.sub-header {
+  display: inline-block;
+}
+
+.title {
   color: inherit;
   text-decoration: none;
 }
@@ -56,25 +59,9 @@ const props = defineProps<{
 }
 
 .date {
-  font-size: 0.8rem;
-}
-
-.subheader {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
   max-width: 60%;
-}
-
-@media (min-width: 600px) {
-  .title {
-    font-size: 1.8rem;
-    max-width: 75%;
-  }
-  .date {
-    font-size: 1rem;
-  }
-  .subheader {
-    font-size: 1.1rem;
-  }
+  opacity: 0.75;
 }
 </style>

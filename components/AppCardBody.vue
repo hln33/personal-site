@@ -88,10 +88,4 @@ const darkModeStore = useDarkModeStore();
   color: var(--text-dark);
   cursor: inherit;
 }
-
-@media (min-width: 600px) {
-  .description {
-    font-size: 0.9rem;
-  }
-}
 </style>
