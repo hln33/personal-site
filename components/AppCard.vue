@@ -47,7 +47,7 @@ const redirect = (e: Event) => {
 }
 .card:hover,
 .card:focus-within {
-  background: rgba(160, 175, 230, 0.8);
+  background: rgba(160, 175, 230, 0.9);
 }
 
 /* dim cards that are not being hovered/focu  sed */
