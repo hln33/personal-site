@@ -5,7 +5,7 @@ import { NIcon } from 'naive-ui';
 <template>
   <n-icon
     aria-label="TypeScript Programming Language Logo"
-    size="13"
+    size="16"
   >
     <svg
       viewBox="0 0 640 640"

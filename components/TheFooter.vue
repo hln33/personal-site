@@ -6,7 +6,7 @@ import { NP } from 'naive-ui';
   <footer>
     <small>
       <n-p :depth="2">
-        Built with
+        Lovingly crafted with
         <AppLinkText
           class="link"
           link="https://vuejs.org/"

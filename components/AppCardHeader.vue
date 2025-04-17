@@ -26,9 +26,7 @@ const props = defineProps<{
     </n-h3>
 
     <n-h4 class="date">
-      <n-text>
-        {{ props.date }}
-      </n-text>
+      {{ props.date }}
     </n-h4>
   </div>
 </template>
@@ -42,7 +40,8 @@ const props = defineProps<{
 
 .main-header {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .sub-header {
@@ -61,7 +60,7 @@ const props = defineProps<{
 .date {
   margin: 0;
   font-size: 1rem;
+  font-weight: 200;
   max-width: 60%;
-  opacity: 0.75;
 }
 </style>

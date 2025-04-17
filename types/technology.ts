@@ -1,18 +1,28 @@
 export const TECHNOLOGIES = {
+  // javascript ecosystem
   JS: 'JavaScript',
   TS: 'TypeScript',
-  Rust: 'Rust',
+  JQuery: 'JQuery',
+  Node: 'NodeJS',
   React: 'React',
   ReactNative: 'React Native',
-  JQuery: 'JQuery',
+  // server related
   Java: 'Java',
   Ruby: 'Ruby',
   Rails: 'Rails',
-  Postgres: 'PostgreSQL',
+  Rust: 'Rust',
+  // mobile
+  Kotlin: 'Kotlin',
+  Android: 'Android',
+  // python ecosystem
   Python: 'Python',
-  Jupyter: 'Jupyter',
   Pandas: 'Pandas',
-  Node: 'NodeJS',
+  Jupyter: 'Jupyter',
+  Django: 'Django',
+  Flask: 'Flask',
+  // databases
+  Postgres: 'PostgreSQL',
+  MySql: 'MySQL',
 } as const;
 
 export type Technologies = (typeof TECHNOLOGIES)[keyof typeof TECHNOLOGIES];

@@ -29,7 +29,7 @@ npm run generate
 Locally preview production build:
 
 ```bash
-npx .output/public
+npx serve .output/public
 ```
 
 Check out the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

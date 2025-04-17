@@ -3,10 +3,15 @@ import { NP, NTag } from 'naive-ui';
 import { TECHNOLOGIES, type Technologies } from '@/types/technology';
 import { useDarkModeStore } from '@/stores/useDarkModeStore';
 import {
+  IconAndroid,
+  IconDjango,
+  IconFlask,
   IconJava,
   IconJQuery,
   IconJS,
   IconJupyter,
+  IconKotlin,
+  IconMySQL,
   IconNode,
   IconPandas,
   IconPostgreSQL,
@@ -40,6 +45,11 @@ const technologyIcons: {
   [TECHNOLOGIES.Jupyter]: IconJupyter,
   [TECHNOLOGIES.Pandas]: IconPandas,
   [TECHNOLOGIES.Node]: IconNode,
+  [TECHNOLOGIES.Django]: IconDjango,
+  [TECHNOLOGIES.MySql]: IconMySQL,
+  [TECHNOLOGIES.Kotlin]: IconKotlin,
+  [TECHNOLOGIES.Android]: IconAndroid,
+  [TECHNOLOGIES.Flask]: IconFlask,
 };
 
 const darkModeStore = useDarkModeStore();
@@ -80,12 +90,15 @@ const darkModeStore = useDarkModeStore();
   gap: 1em;
 }
 .technologies .technology {
-  padding: 1.25em 1em 1.25em 1.5em;
+  padding: 1.25em 1em 1.25em 1.8em;
 }
 
 .technology {
   background: rgba(25, 25, 25, 0.8);
   color: var(--text-dark);
   cursor: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
 }
 </style>
