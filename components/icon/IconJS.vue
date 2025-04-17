@@ -5,7 +5,7 @@ import { NIcon } from 'naive-ui';
 <template>
   <n-icon
     aria-label="JavaScript Programming Language Logo"
-    size="16"
+    size="20"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

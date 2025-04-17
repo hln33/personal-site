@@ -5,7 +5,7 @@ import { NIcon } from 'naive-ui';
 <template>
   <n-icon
     aria-label="Ruby on Rails Logo"
-    size="20"
+    size="24"
   >
     <svg
       id="Layer_1"
